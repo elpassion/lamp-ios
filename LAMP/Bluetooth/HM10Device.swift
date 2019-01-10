@@ -17,8 +17,8 @@ struct HM10Device {
 
 extension HM10Device {
 
-    func send(color: UIColor) {
-        peripheral.writeValue(color.serialize(), for: writeCharacteristic, type: .withoutResponse)
+    func send(data: Data) {
+        peripheral.writeValue(data, for: writeCharacteristic, type: .withoutResponse)
     }
 
 }

@@ -1,7 +1,9 @@
 import ChromaColorPicker
+import RxCocoa
+import RxSwift
 import UIKit
 
-class ColorPickerController: UIViewController {
+class ColorPickerController: UIViewController, ChromaColorPickerDelegate {
 
     let device: HM10Device
 
@@ -22,8 +24,19 @@ class ColorPickerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pickerView.pickerView.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
+        pickerView.pickerView.rx.controlEvent(.valueChanged)
+            .map { [pickerView] _ -> Data in
+                pickerView?.pickerView.currentColor.serialize() ?? Data()
+            }
+            .distinctUntilChanged()
+            .throttle(0.25, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] data in
+                self?.device.send(data: data)
+            })
+            .disposed(by: disposeBag)
     }
+
+    private let disposeBag = DisposeBag()
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,8 +46,12 @@ class ColorPickerController: UIViewController {
 
     // MARK: - ChromaColorPickerDelegate
 
+    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+        //device.send(color: color)
+    }
+
     @objc private func valueChanged() {
-        device.send(color: pickerView.pickerView.currentColor)
+        //device.send(color: pickerView.pickerView.currentColor)
     }
 
     required init?(coder aDecoder: NSCoder) { return nil }
