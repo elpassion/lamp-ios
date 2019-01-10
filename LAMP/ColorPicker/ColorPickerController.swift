@@ -34,6 +34,13 @@ class ColorPickerController: UIViewController {
                 self?.device.send(data: data)
             })
             .disposed(by: disposeBag)
+
+        pickerView.resetButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                let loading = LoadingViewController()
+                self?.navigationController?.setViewControllers([loading], animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()
