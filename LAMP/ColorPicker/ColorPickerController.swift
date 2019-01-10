@@ -3,7 +3,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-class ColorPickerController: UIViewController, ChromaColorPickerDelegate {
+class ColorPickerController: UIViewController {
 
     let device: HM10Device
 
@@ -42,16 +42,6 @@ class ColorPickerController: UIViewController, ChromaColorPickerDelegate {
         super.viewWillAppear(animated)
 
         pickerView.pickerView.center = pickerView.center
-    }
-
-    // MARK: - ChromaColorPickerDelegate
-
-    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
-        //device.send(color: color)
-    }
-
-    @objc private func valueChanged() {
-        //device.send(color: pickerView.pickerView.currentColor)
     }
 
     required init?(coder aDecoder: NSCoder) { return nil }
