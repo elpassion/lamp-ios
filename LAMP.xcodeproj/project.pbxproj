@@ -10,6 +10,12 @@
 		8C8710E721E765CC00BF23AF /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710E621E765CC00BF23AF /* LoadingViewController.swift */; };
 		8C8710E921E765DF00BF23AF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710E821E765DF00BF23AF /* LoadingView.swift */; };
 		8C8710EC21E765FA00BF23AF /* hourglass.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C8710EB21E765FA00BF23AF /* hourglass.json */; };
+		8C8710EF21E767FF00BF23AF /* BluetoothConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710EE21E767FF00BF23AF /* BluetoothConnector.swift */; };
+		8C8710F121E7696100BF23AF /* HM10Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710F021E7696100BF23AF /* HM10Device.swift */; };
+		8C8710F421E76AFB00BF23AF /* ColorPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710F321E76AFB00BF23AF /* ColorPickerController.swift */; };
+		8C8710F621E76B0E00BF23AF /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710F521E76B0E00BF23AF /* ColorPickerView.swift */; };
+		8C8710F921E76D0000BF23AF /* UIColor+Serialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710F821E76D0000BF23AF /* UIColor+Serialize.swift */; };
+		8C8710FB21E7706C00BF23AF /* UILabel+FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710FA21E7706C00BF23AF /* UILabel+FadeTransition.swift */; };
 		8CCF815B21E7487700571709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF815A21E7487700571709 /* AppDelegate.swift */; };
 		8CCF815D21E7487700571709 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF815C21E7487700571709 /* ViewController.swift */; };
 		8CCF816221E7487800571709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCF816121E7487800571709 /* Assets.xcassets */; };
@@ -33,6 +39,12 @@
 		8C8710E621E765CC00BF23AF /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		8C8710E821E765DF00BF23AF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8C8710EB21E765FA00BF23AF /* hourglass.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hourglass.json; path = ../../../../../../Downloads/hourglass.json; sourceTree = "<group>"; };
+		8C8710EE21E767FF00BF23AF /* BluetoothConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnector.swift; sourceTree = "<group>"; };
+		8C8710F021E7696100BF23AF /* HM10Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HM10Device.swift; sourceTree = "<group>"; };
+		8C8710F321E76AFB00BF23AF /* ColorPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerController.swift; sourceTree = "<group>"; };
+		8C8710F521E76B0E00BF23AF /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		8C8710F821E76D0000BF23AF /* UIColor+Serialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Serialize.swift"; sourceTree = "<group>"; };
+		8C8710FA21E7706C00BF23AF /* UILabel+FadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+FadeTransition.swift"; sourceTree = "<group>"; };
 		8CCF815721E7487700571709 /* LAMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LAMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCF815A21E7487700571709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CCF815C21E7487700571709 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +108,33 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		8C8710ED21E767E500BF23AF /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				8C8710EE21E767FF00BF23AF /* BluetoothConnector.swift */,
+				8C8710F021E7696100BF23AF /* HM10Device.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		8C8710F221E76AF000BF23AF /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				8C8710F321E76AFB00BF23AF /* ColorPickerController.swift */,
+				8C8710F521E76B0E00BF23AF /* ColorPickerView.swift */,
+			);
+			path = ColorPicker;
+			sourceTree = "<group>";
+		};
+		8C8710F721E76CF300BF23AF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8C8710F821E76D0000BF23AF /* UIColor+Serialize.swift */,
+				8C8710FA21E7706C00BF23AF /* UILabel+FadeTransition.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8CCF814E21E7487700571709 = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +158,10 @@
 		8CCF815921E7487700571709 /* LAMP */ = {
 			isa = PBXGroup;
 			children = (
+				8C8710F721E76CF300BF23AF /* Extensions */,
+				8C8710F221E76AF000BF23AF /* ColorPicker */,
 				8C8710EA21E765EB00BF23AF /* Assets */,
+				8C8710ED21E767E500BF23AF /* Bluetooth */,
 				8C8710E521E765C000BF23AF /* Loader */,
 				8CCF815A21E7487700571709 /* AppDelegate.swift */,
 				8CCF815C21E7487700571709 /* ViewController.swift */,
@@ -327,10 +369,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C8710F621E76B0E00BF23AF /* ColorPickerView.swift in Sources */,
+				8C8710EF21E767FF00BF23AF /* BluetoothConnector.swift in Sources */,
+				8C8710F421E76AFB00BF23AF /* ColorPickerController.swift in Sources */,
+				8C8710FB21E7706C00BF23AF /* UILabel+FadeTransition.swift in Sources */,
 				8CCF815D21E7487700571709 /* ViewController.swift in Sources */,
 				8C8710E921E765DF00BF23AF /* LoadingView.swift in Sources */,
+				8C8710F921E76D0000BF23AF /* UIColor+Serialize.swift in Sources */,
 				8CCF815B21E7487700571709 /* AppDelegate.swift in Sources */,
 				8C8710E721E765CC00BF23AF /* LoadingViewController.swift in Sources */,
+				8C8710F121E7696100BF23AF /* HM10Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +536,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q77FN535PU;
 				INFOPLIST_FILE = LAMP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,6 +556,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q77FN535PU;
 				INFOPLIST_FILE = LAMP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
