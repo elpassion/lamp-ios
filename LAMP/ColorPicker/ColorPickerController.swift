@@ -1,9 +1,8 @@
-import ChromaColorPicker
 import RxCocoa
 import RxSwift
 import UIKit
 
-class ColorPickerController: UIViewController {
+class ColorPickerController: UIViewController, ColorWheelDelegate {
 
     let device: HM10Device
 
@@ -24,10 +23,10 @@ class ColorPickerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pickerView.pickerView.rx.controlEvent(.valueChanged)
-            .map { [pickerView] _ -> Data in
-                pickerView?.pickerView.currentColor.serialize() ?? Data()
-            }
+        pickerView.pickerView.delegate = self
+
+        colorRelay
+            .map { $0.normalized().serialize() }
             .distinctUntilChanged()
             .throttle(0.25, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] data in
@@ -44,11 +43,20 @@ class ColorPickerController: UIViewController {
     }
 
     private let disposeBag = DisposeBag()
+    private let colorRelay = BehaviorRelay<UIColor>(value: .white)
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         pickerView.pickerView.center = pickerView.center
+    }
+
+    func didSelect(color: UIColor) {
+        colorRelay.accept(color)
+    }
+
+    func didRotate() {
+        colorRelay.accept(colorRelay.value.updating(brightness: pickerView.pickerView.brightness))
     }
 
     required init?(coder aDecoder: NSCoder) { return nil }

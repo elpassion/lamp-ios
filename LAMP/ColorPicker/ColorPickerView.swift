@@ -1,11 +1,11 @@
 import Anchorage
-import ChromaColorPicker
 import UIKit
 
 class ColorPickerView: UIView {
 
-    let pickerView: ChromaColorPicker = {
-        let view = ChromaColorPicker(frame: CGRect(origin: .zero, size: CGSize(width: 300, height: 300)))
+    let pickerView: RotatingColorWheel = {
+        let view = RotatingColorWheel(frame: .zero)
+        view.backgroundColor = .white
         return view
     }()
 
@@ -36,6 +36,9 @@ class ColorPickerView: UIView {
         resetButton.topAnchor == topAnchor + 50
         resetButton.sizeAnchors == CGSize(width: 200, height: 40)
         resetButton.centerXAnchor == centerXAnchor
+
+        pickerView.sizeAnchors == CGSize(width: 300, height: 300)
+        pickerView.centerAnchors == centerAnchors
     }
 
     required init?(coder aDecoder: NSCoder) { return nil }
