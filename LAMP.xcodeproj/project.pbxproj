@@ -17,7 +17,6 @@
 		8C8710F921E76D0000BF23AF /* UIColor+Serialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710F821E76D0000BF23AF /* UIColor+Serialize.swift */; };
 		8C8710FB21E7706C00BF23AF /* UILabel+FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710FA21E7706C00BF23AF /* UILabel+FadeTransition.swift */; };
 		8CCF815B21E7487700571709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF815A21E7487700571709 /* AppDelegate.swift */; };
-		8CCF815D21E7487700571709 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF815C21E7487700571709 /* ViewController.swift */; };
 		8CCF816221E7487800571709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCF816121E7487800571709 /* Assets.xcassets */; };
 		8CCF816521E7487800571709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CCF816321E7487800571709 /* LaunchScreen.storyboard */; };
 		8CCF817021E7487900571709 /* LAMPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF816F21E7487900571709 /* LAMPTests.swift */; };
@@ -47,7 +46,6 @@
 		8C8710FA21E7706C00BF23AF /* UILabel+FadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+FadeTransition.swift"; sourceTree = "<group>"; };
 		8CCF815721E7487700571709 /* LAMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LAMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCF815A21E7487700571709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8CCF815C21E7487700571709 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8CCF816121E7487800571709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CCF816421E7487800571709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CCF816621E7487800571709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				8C8710ED21E767E500BF23AF /* Bluetooth */,
 				8C8710E521E765C000BF23AF /* Loader */,
 				8CCF815A21E7487700571709 /* AppDelegate.swift */,
-				8CCF815C21E7487700571709 /* ViewController.swift */,
 				8CCF816121E7487800571709 /* Assets.xcassets */,
 				8CCF816321E7487800571709 /* LaunchScreen.storyboard */,
 				8CCF816621E7487800571709 /* Info.plist */,
@@ -379,7 +376,6 @@
 				8C8710EF21E767FF00BF23AF /* BluetoothConnector.swift in Sources */,
 				8C8710F421E76AFB00BF23AF /* ColorPickerController.swift in Sources */,
 				8C8710FB21E7706C00BF23AF /* UILabel+FadeTransition.swift in Sources */,
-				8CCF815D21E7487700571709 /* ViewController.swift in Sources */,
 				8C8710E921E765DF00BF23AF /* LoadingView.swift in Sources */,
 				8C8710F921E76D0000BF23AF /* UIColor+Serialize.swift in Sources */,
 				8CCF815B21E7487700571709 /* AppDelegate.swift in Sources */,

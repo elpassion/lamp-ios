@@ -9,6 +9,12 @@ class ColorPickerView: UIView {
         return view
     }()
 
+    let resetButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Reconnect", for: .normal)
+        return button
+    }()
+
     init() {
         super.init(frame: .zero)
 
@@ -22,11 +28,14 @@ class ColorPickerView: UIView {
     }
 
     private func addSubviews() {
+        addSubview(resetButton)
         addSubview(pickerView)
     }
 
     private func setUpConstraints() {
-
+        resetButton.topAnchor == topAnchor + 50
+        resetButton.sizeAnchors == CGSize(width: 200, height: 40)
+        resetButton.centerXAnchor == centerXAnchor
     }
 
     required init?(coder aDecoder: NSCoder) { return nil }

@@ -1,3 +1,4 @@
+import RxSwift
 import UIKit
 
 class LoadingViewController: UIViewController {
@@ -15,18 +16,21 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        connector.connect()
+            .delay(2.0, scheduler: MainScheduler.instance)
+            .subscribe(onSuccess: { [unowned self] device in
+                self.show(device: device)
+            })
+            .disposed(by: disposeBag)
+
         loadingView.animationView.play()
-
-        connector.connect { [weak self] device in
-            let controller = ColorPickerController(device: device)
-            self?.navigationController?.pushViewController(controller, animated: true)
-        }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        loadingView.titleLabel.fade(to: "LEDOWO", duration: 1.0)
+    private func show(device: HM10Device) {
+        let controller = ColorPickerController(device: device)
+        navigationController?.pushViewController(controller, animated: true)
     }
+
+    private let disposeBag = DisposeBag()
 
 }
