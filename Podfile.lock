@@ -1,16 +1,24 @@
 PODS:
+  - Anchorage (4.3)
   - ChromaColorPicker (1.7.2)
+  - lottie-ios (2.5.2)
 
 DEPENDENCIES:
+  - Anchorage (~> 4.3)
   - ChromaColorPicker (~> 1.5)
+  - lottie-ios (~> 2.5)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Anchorage
     - ChromaColorPicker
+    - lottie-ios
 
 SPEC CHECKSUMS:
+  Anchorage: 21a98675245188427f0bcea21404d42a824a766f
   ChromaColorPicker: 78194fbae9f342d3781ac178c4d92c7652197d18
+  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
 
-PODFILE CHECKSUM: ff7b03fcfd1dba43932da075c6817bf830f5f042
+PODFILE CHECKSUM: a2e31f949104b63a5238dfbd691aded22e36da4a
 
 COCOAPODS: 1.5.3

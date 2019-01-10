@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C8710E721E765CC00BF23AF /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710E621E765CC00BF23AF /* LoadingViewController.swift */; };
+		8C8710E921E765DF00BF23AF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8710E821E765DF00BF23AF /* LoadingView.swift */; };
+		8C8710EC21E765FA00BF23AF /* hourglass.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C8710EB21E765FA00BF23AF /* hourglass.json */; };
 		8CCF815B21E7487700571709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF815A21E7487700571709 /* AppDelegate.swift */; };
 		8CCF815D21E7487700571709 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF815C21E7487700571709 /* ViewController.swift */; };
-		8CCF816021E7487700571709 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CCF815E21E7487700571709 /* Main.storyboard */; };
 		8CCF816221E7487800571709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCF816121E7487800571709 /* Assets.xcassets */; };
 		8CCF816521E7487800571709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CCF816321E7487800571709 /* LaunchScreen.storyboard */; };
 		8CCF817021E7487900571709 /* LAMPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF816F21E7487900571709 /* LAMPTests.swift */; };
@@ -28,10 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C8710E621E765CC00BF23AF /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		8C8710E821E765DF00BF23AF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8C8710EB21E765FA00BF23AF /* hourglass.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hourglass.json; path = ../../../../../../Downloads/hourglass.json; sourceTree = "<group>"; };
 		8CCF815721E7487700571709 /* LAMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LAMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCF815A21E7487700571709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CCF815C21E7487700571709 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8CCF815F21E7487700571709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CCF816121E7487800571709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CCF816421E7487800571709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CCF816621E7487800571709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +79,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8C8710E521E765C000BF23AF /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				8C8710E621E765CC00BF23AF /* LoadingViewController.swift */,
+				8C8710E821E765DF00BF23AF /* LoadingView.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		8C8710EA21E765EB00BF23AF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8C8710EB21E765FA00BF23AF /* hourglass.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		8CCF814E21E7487700571709 = {
 			isa = PBXGroup;
 			children = (
@@ -98,9 +119,10 @@
 		8CCF815921E7487700571709 /* LAMP */ = {
 			isa = PBXGroup;
 			children = (
+				8C8710EA21E765EB00BF23AF /* Assets */,
+				8C8710E521E765C000BF23AF /* Loader */,
 				8CCF815A21E7487700571709 /* AppDelegate.swift */,
 				8CCF815C21E7487700571709 /* ViewController.swift */,
-				8CCF815E21E7487700571709 /* Main.storyboard */,
 				8CCF816121E7487800571709 /* Assets.xcassets */,
 				8CCF816321E7487800571709 /* LaunchScreen.storyboard */,
 				8CCF816621E7487800571709 /* Info.plist */,
@@ -214,7 +236,7 @@
 			files = (
 				8CCF816521E7487800571709 /* LaunchScreen.storyboard in Resources */,
 				8CCF816221E7487800571709 /* Assets.xcassets in Resources */,
-				8CCF816021E7487700571709 /* Main.storyboard in Resources */,
+				8C8710EC21E765FA00BF23AF /* hourglass.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,13 +259,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LAMP/Pods-LAMP-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework",
 				"${BUILT_PRODUCTS_DIR}/ChromaColorPicker/ChromaColorPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anchorage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChromaColorPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -302,7 +328,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CCF815D21E7487700571709 /* ViewController.swift in Sources */,
+				8C8710E921E765DF00BF23AF /* LoadingView.swift in Sources */,
 				8CCF815B21E7487700571709 /* AppDelegate.swift in Sources */,
+				8C8710E721E765CC00BF23AF /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,14 +353,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8CCF815E21E7487700571709 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8CCF815F21E7487700571709 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8CCF816321E7487800571709 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
