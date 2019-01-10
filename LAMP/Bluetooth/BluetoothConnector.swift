@@ -1,4 +1,5 @@
 import CoreBluetooth
+import RxSwift
 
 class BluetoothConnector: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
 
@@ -6,9 +7,9 @@ class BluetoothConnector: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
         CBCentralManager(delegate: nil, queue: nil)
     }()
 
-    func connect(_ completionHandler: ((HM10Device) -> Void)?) {
+    func connect() -> Single<HM10Device> {
         centralManager.delegate = self
-        completion = completionHandler
+        return deviceSubject.take(1).asSingle()
     }
 
     // MARK: - CBCentralManagerDelegate
@@ -44,7 +45,7 @@ class BluetoothConnector: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
         writeCharacteristic = characteristics.first { $0.uuid == characteristicHM10 }
 
         if let device = HM10Device(peripheral: connected, writeCharacteristic: writeCharacteristic) {
-            completion?(device)
+            deviceSubject.onNext(device)
         }
     }
 
@@ -54,6 +55,6 @@ class BluetoothConnector: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
 
     var connected: CBPeripheral?
     var writeCharacteristic: CBCharacteristic?
-    private var completion: ((HM10Device) -> Void)?
+    private let deviceSubject = PublishSubject<HM10Device>()
 
 }
