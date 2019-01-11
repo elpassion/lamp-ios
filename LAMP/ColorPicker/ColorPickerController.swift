@@ -1,8 +1,10 @@
+import Gallery
 import RxCocoa
 import RxSwift
 import UIKit
+import Photos
 
-class ColorPickerController: UIViewController, ColorWheelDelegate {
+class ColorPickerController: UIViewController, ColorWheelDelegate, GalleryControllerDelegate {
 
     let device: HM10Device
 
@@ -40,16 +42,32 @@ class ColorPickerController: UIViewController, ColorWheelDelegate {
                 self?.navigationController?.setViewControllers([loading], animated: true)
             })
             .disposed(by: disposeBag)
+
+        pickerView.playButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.showGallery()
+            })
+            .disposed(by: disposeBag)
+
+        pickerView.offButton.rx.tap
+            .map { UIColor.black }
+            .bind(to: colorRelay)
+            .disposed(by: disposeBag)
+
+        pickerView.whiteButton.rx.tap
+            .map { UIColor.white }
+            .bind(to: colorRelay)
+            .disposed(by: disposeBag)
+
+        pickerView.pickButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.showPicker()
+            })
+            .disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()
     private let colorRelay = BehaviorRelay<UIColor>(value: .white)
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        pickerView.pickerView.center = pickerView.center
-    }
 
     func didSelect(color: UIColor) {
         colorRelay.accept(color)
@@ -57,6 +75,51 @@ class ColorPickerController: UIViewController, ColorWheelDelegate {
 
     func didRotate() {
         colorRelay.accept(colorRelay.value.updating(brightness: pickerView.pickerView.brightness))
+    }
+
+    var gallery: GalleryController?
+
+    func showGallery() {
+        Config.tabsToShow = [.videoTab]
+
+        let gallery = GalleryController()
+        self.gallery = gallery
+        gallery.delegate = self
+        present(gallery, animated: true)
+    }
+
+    func showPicker() {
+        let alert = UIAlertController(style: .actionSheet)
+        alert.addColorPicker(color: colorRelay.value) { [weak self] color in
+            self?.colorRelay.accept(color)
+        }
+        alert.addAction(title: "Done", style: .cancel)
+        alert.show()
+    }
+
+    func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
+
+    }
+
+    func galleryController(_ controller: GalleryController, didSelectVideo video: Video) {
+        gallery?.dismiss(animated: false) { [unowned self] in
+            PHCachingImageManager().requestAVAsset(forVideo: video.asset, options: nil, resultHandler: {(asset: AVAsset?, audioMix: AVAudioMix?, info: [AnyHashable : Any]?) in
+                let asset = asset as! AVURLAsset
+
+                DispatchQueue.main.async {
+                    let videoController = VideoController(device: self.device, url: asset.url)
+                    self.navigationController?.pushViewController(videoController, animated: true)
+                }
+            })
+        }
+    }
+
+    func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) {
+
+    }
+
+    func galleryControllerDidCancel(_ controller: GalleryController) {
+        gallery?.dismiss(animated: true, completion: nil)
     }
 
     required init?(coder aDecoder: NSCoder) { return nil }

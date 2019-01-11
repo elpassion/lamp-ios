@@ -19,7 +19,7 @@ class BluetoothConnector: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
         case .poweredOn:
             centralManager.scanForPeripherals(withServices: nil, options: nil)
         default:
-            fatalError("Unhandled error")
+            print("ERROR")
         }
     }
 
@@ -49,7 +49,7 @@ class BluetoothConnector: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
         }
     }
 
-    private let nameHM10 = "BT05"
+    private let nameHM10 = "HC-08"
     private let serviceHM10 = CBUUID(string: "FFE0")
     private let characteristicHM10 = CBUUID(string: "FFE1")
 

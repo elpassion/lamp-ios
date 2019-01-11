@@ -1,6 +1,13 @@
 PODS:
   - Anchorage (4.3)
+  - Cache (5.2.0)
   - ChromaColorPicker (1.7.2)
+  - Gallery (2.2.0)
+  - Hue (3.0.1)
+  - Imaginary (4.2.0):
+    - Cache (~> 5.0)
+  - Lightbox (2.3.0):
+    - Imaginary (~> 4.0)
   - lottie-ios (2.5.2)
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
@@ -11,6 +18,9 @@ PODS:
 DEPENDENCIES:
   - Anchorage (~> 4.3)
   - ChromaColorPicker (~> 1.5)
+  - Gallery (~> 2.2.0)
+  - Hue (~> 3.0)
+  - Lightbox (~> 2.3)
   - lottie-ios (~> 2.5)
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
@@ -18,7 +28,12 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Anchorage
+    - Cache
     - ChromaColorPicker
+    - Gallery
+    - Hue
+    - Imaginary
+    - Lightbox
     - lottie-ios
     - RxAtomic
     - RxCocoa
@@ -26,12 +41,17 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Anchorage: 21a98675245188427f0bcea21404d42a824a766f
+  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   ChromaColorPicker: 78194fbae9f342d3781ac178c4d92c7652197d18
+  Gallery: 3f4c780c4b22906d6b0a5e55d12167cdc4b4fc5b
+  Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
+  Imaginary: dae33d06dbc2ada22f98afef5eb45cc061311a2c
+  Lightbox: d317750e4132bfb871a5307cfe0a2c7d6a583c65
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
-PODFILE CHECKSUM: ebdaf538fea1da209257849c1dbfb88c977f4412
+PODFILE CHECKSUM: f7f910f70e04800d21ddd8a48d0733b4e09ab370
 
 COCOAPODS: 1.5.3

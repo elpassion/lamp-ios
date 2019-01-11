@@ -32,4 +32,11 @@ extension UIColor {
         return UIColor(hue: h, saturation: s, brightness: brightness, alpha: 1.0)
     }
 
+    func saturated() -> UIColor {
+        var h: CGFloat = 0, b: CGFloat = 0
+        getHue(&h, saturation: nil, brightness: &b, alpha: nil)
+
+        return UIColor(hue: h, saturation: 1, brightness: b, alpha: 1.0)
+    }
+
 }

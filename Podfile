@@ -8,6 +8,9 @@ target 'LAMP' do
   pod 'Anchorage', '~> 4.3'
   pod 'RxSwift', '~> 4.0'
   pod 'RxCocoa', '~> 4.0'
+  pod 'Lightbox', '~> 2.3'
+  pod 'Hue', '~> 3.0'
+  pod 'Gallery', '~> 2.2.0'
 
   target 'LAMPTests' do
     inherit! :search_paths
